@@ -1,0 +1,210 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MusicApp</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Mixtape template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/styles/bootstrap-4.1.2/bootstrap.min.css" media="all">
+  <link rel="stylesheet" href="/static/plugins/font-awesome-4.7.0/css/font-awesome.min.css" media="all">
+  <link rel="stylesheet" href="/static/plugins/OwlCarousel2-2.2.1/owl.carousel.css" media="all">
+  <link rel="stylesheet" href="/static/plugins/OwlCarousel2-2.2.1/owl.theme.default.css" media="all">
+  <link rel="stylesheet" href="/static/plugins/OwlCarousel2-2.2.1/animate.css" media="all">
+  <link rel="stylesheet" href="/static/styles/about.css" media="all">
+  <link rel="stylesheet" href="/static/styles/about_responsive.css" media="all">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <body>
+
+        <div class="super_container">
+        
+            <!-- Header -->
+            <header class="header">
+                <div class="header_content d-flex flex-row align-items-center justify-content-center">
+                    <div class="logo"><a href="#">Mixtape</a></div>
+                    <div class="log_reg">
+                        <ul class="d-flex flex-row align-items-start justify-content-start">
+                            <li><a href="login">Login</a></li>
+                            <li><a href="signup">Register</a></li>
+                        </ul>
+                    </div>
+                    <nav class="main_nav">
+                        <ul class="d-flex flex-row align-items-start justify-content-start">
+                            <li><a href="index">Home</a></li>
+                            <li class="active"><a href="about">About us</a></li>
+                            <li><a href="music">Music</a></li>
+                            <li><a href="blog">News</a></li>
+                            <li><a href="contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="hamburger ml-auto">
+                        <div class="d-flex flex-column align-items-end justify-content-between">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        
+            <!-- Menu -->
+        
+            <div class="menu">
+                <div>
+                    <div class="menu_overlay"></div>
+                    <div class="menu_container d-flex flex-column align-items-start justify-content-center">
+                        <div class="menu_log_reg">
+                            <ul class="d-flex flex-row align-items-start justify-content-start">
+                                <li><a href="#">Login</a></li>
+                                <li><a href="#">Register</a></li>
+                            </ul>
+                        </div>
+                        <nav class="menu_nav">
+                            <ul class="d-flex flex-column align-items-start justify-content-start">
+                                <li><a href="index">Home</a></li>
+                                <li><a href="about">About us</a></li>
+                                <li><a href="music">Music</a></li>
+                                <li><a href="blog">News</a></li>
+                                <li><a href="contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+    <center>
+        <h1>MUSIC PLAYER</h1>
+    </center>
+    <center>
+        <i>
+        <h3>Find ur favourite artist's songs here for free!</h3></i>
+    </center>
+    {% for x in album %}
+    <div class="container">
+        <div class="profile-image">
+            <img src="{{x.album_image.url }}" class="img-fluid"><br>
+            
+        </div>
+        <div class="profile-name">
+            <a href="playlist?album={{x.id}}">{{x.album_name}} </a>
+        </div>
+    </div>
+    {%endfor%}
+    <footer class="footer">
+		<div class="footer_container d-flex flex-xl-row flex-column align-items-start justify-content-start">
+			<div class="newsletter_container">
+				<div class="newsletter_title"><h2>Subscribe to our newsletter</h2></div>
+				<form action="#" id="newsletter_form" class="newsletter_form">
+					<input type="email" class="newsletter_input" placeholder="Your E-mail" required="required">
+					<button class="newsletter_button">Subscribe</button>
+				</form>
+			</div>
+			<div class="footer_lists d-flex flex-sm-row  flex-column align-items-start justify-content-start ml-xl-auto">
+
+				<!-- Useful Links -->
+				<div class="footer_list">
+					<div class="footer_list_title">Useful Links</div>
+					<ul>
+						<li><a href="index">Home</a></li>
+						<li><a href="about">About us</a></li>
+						<li><a href="#">Testimonials</a></li>
+						<li><a href="#">Music</a></li>
+						<li><a href="blog">News</a></li>
+					</ul>
+				</div>
+
+				<!-- Mixtape -->
+				<div class="footer_list">
+					<div class="footer_list_title">Mixtape</div>
+					<ul>
+						<li><a href="#">Music</a></li>
+						<li><a href="#">PR & Marketing</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">About us</a></li>
+						<li><a href="#">Testimonials</a></li>
+					</ul>
+				</div>
+
+				<!-- Connect -->
+				<div class="footer_list">
+					<div class="footer_list_title">Connect</div>
+					<ul>
+						<li><a href="#">Returns</a></li>
+						<li><a href="#">Shippings</a></li>
+						<li><a href="#">Jobs</a></li>
+						<li><a href="#">Social Media</a></li>
+						<li><a href="#">Soundcloud</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+		<div class="copyright_bar">
+			<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</span>
+		</div>
+	</footer>
+</div>
+<link rel="stylesheet" href="/static/js/jquery-3.2.1.min.js" media="all">
+<link rel="stylesheet" href="/static/styles/bootstrap-4.1.2/popper.js" media="all">
+<link rel="stylesheet" href="/static/styles/bootstrap-4.1.2/bootstrap.min.js" media="all">
+<link rel="stylesheet" href="/static/plugins/greensock/TweenMax.min.js`" media="all">
+<link rel="stylesheet" href="/static/plugins/greensock/TimelineMax.min.js" media="all">
+<link rel="stylesheet" href="/static/plugins/scrollmagic/ScrollMagic.min.js" media="all">
+<link rel="stylesheet" href="/static/plugins/greensock/animation.gsap.min.js" media="all">
+<link rel="stylesheet" href="/static/plugins/greensock/ScrollToPlugin.min.js" media="all">
+<link rel="stylesheet" href="/static/plugins/OwlCarousel2-2.2.1/owl.carousel.js" media="all">
+<link rel="stylesheet" href="/static/plugins/easing/easing.js" media="all">
+<link rel="stylesheet" href="/static/plugins/progressbar/progressbar.min.js" media="all">
+<link rel="stylesheet" href="/static/plugins/parallax-js-master/parallax.min.js" media="all">
+<link rel="stylesheet" href="/static/plugins/jPlayer/jquery.jplayer.min.js" media="all">
+<link rel="stylesheet" href="/static/plugins/jPlayer/jplayer.playlist.min.js" media="all">
+<link rel="stylesheet" href="/static/js/about.js" media="all">
+
+
+
+</body>
+</html>
